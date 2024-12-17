@@ -1,0 +1,277 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-12-17 14:56+0500\n"
+"PO-Revision-Date: 2024-12-17 14:56+0500\n"
+"Last-Translator: TO'LIQ ISM <EMAIL@ADDRESS>\n"
+"Language: uz\n"
+"Language-Team: uz <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: apps/bot/models.py:53
+msgid "Car brand"
+msgstr "Avtomobil brendi"
+
+#: apps/bot/models.py:56
+msgid "Model"
+msgstr "Model"
+
+#: apps/bot/models.py:59
+msgid "Color"
+msgstr "Rang"
+
+#: apps/bot/handlers/active_detactions.py:70
+msgid "❌ Sizning faol deteksiyalaringiz topilmadi."
+msgstr "❌ Sizning faol deteksiyalaringiz topilmadi."
+
+#: apps/bot/handlers/active_detactions.py:88
+msgid "📝 Sizning deteksiyalaringiz ro'yxati."
+msgstr "📝 Sizning deteksiyalaringiz ro'yxati."
+
+#: apps/bot/handlers/active_detactions.py:110
+#: apps/bot/handlers/active_detactions.py:131
+msgid "❌ Deteksiya topilmadi."
+msgstr "❌ Deteksiya topilmadi."
+
+#: apps/bot/handlers/active_detactions.py:152
+msgid "✅ Deteksiya muvaffaqiyatli o'chirildi!"
+msgstr "✅ Deteksiya muvaffaqiyatli o'chirildi!"
+
+#: apps/bot/handlers/active_detactions.py:154
+msgid "❌ Deteksiya topilmadi yoki o'chirishda xato yuz berdi."
+msgstr "❌ Deteksiya topilmadi yoki o'chirishda xato yuz berdi."
+
+#: apps/bot/handlers/commands.py:15
+msgid "Quyidagilardan birini tanlang"
+msgstr "Quyidagilardan birini tanlang"
+
+#: apps/bot/handlers/commands.py:20
+msgid ""
+"Available commands:\n"
+"/start - Start the bot\n"
+"/help - Get help"
+msgstr ""
+"Mavjud buyruqlar:\n"
+"/start - Botni boshlash\n"
+"/help - Yordam olish"
+
+#: apps/bot/handlers/create_detections.py:31
+msgid "🔍 Qaysi avtomobil brendini tanlaysiz?"
+msgstr "🔍 Qaysi avtomobil brendini tanlaysiz?"
+
+#: apps/bot/handlers/create_detections.py:44
+msgid "🚗 Qaysi modelni tanlaysiz?"
+msgstr "🚗 Qaysi modelni tanlaysiz?"
+
+#: apps/bot/handlers/create_detections.py:109
+msgid "🔧 Filtrlarni tanlang:"
+msgstr "🔧 Filtrlarni tanlang:"
+
+#: apps/bot/handlers/create_detections.py:117
+msgid "🟦 Mashinaning rangini tanlang:"
+msgstr "🟦 Mashinaning rangini tanlang:"
+
+#: apps/bot/handlers/create_detections.py:127
+msgid "📏 Yurgan masofa oralig'ini tanlang:"
+msgstr "📏 Yurgan masofa oralig'ini tanlang:"
+
+#: apps/bot/handlers/create_detections.py:131
+msgid "{} tanlandi!"
+msgstr "{} tanlandi!"
+
+#: apps/bot/handlers/create_detections.py:138
+msgid "📅 Yilni kiriting (masalan: 2010-2020):"
+msgstr "📅 Yilni kiriting (masalan: 2010-2020):"
+
+#: apps/bot/handlers/create_detections.py:142
+msgid "{} oraligi tanlandi!"
+msgstr "{} oraligi tanlandi!"
+
+#: apps/bot/handlers/registration.py:19
+msgid "Telefon raqamingizni jo`nating"
+msgstr "Telefon raqamingizni yuboring"
+
+#: apps/bot/handlers/registration.py:27
+msgid "To`g`ri formatda raqam jo`nating yoki buttondan foydalaning"
+msgstr "To'g'ri formatda raqam yuboring yoki tugmadan foydalaning"
+
+#: apps/bot/handlers/registration.py:31 apps/bot/handlers/registration.py:38
+msgid "Ismingizni jo`nating"
+msgstr "Ismingizni yuboring"
+
+#: apps/bot/handlers/registration.py:47
+msgid ""
+"Sizning ismingiz: {name}\n"
+"Telefon raqamingiz: {phone_number}\n"
+"Tiliz: {language}\n"
+"\n"
+"Sizning registratsiyani yakunlashingiz uchun tugmasini bosing"
+msgstr ""
+"Sizning ismingiz: {name}\n"
+"Telefon raqamingiz: {phone_number}\n"
+"Tilingiz: {language}\n"
+"\n"
+"Registratsiyani yakunlash uchun tugmani bosing"
+
+
+
+#: apps/bot/keyboards/inline.py:15
+msgid "🗞Yangi detektsiya yaratish."
+msgstr "🗞 Yangi deteksiya yaratish."
+
+#: apps/bot/keyboards/inline.py:17
+msgid "🔄Faol detektsiyalar"
+msgstr "🔄 Faol deteksiyalar"
+
+#: apps/bot/keyboards/inline.py:19
+msgid "⚙️Sozlamalar"
+msgstr "⚙️ Sozlamalar"
+
+#: apps/bot/keyboards/inline.py:29
+msgid "O'zbek"
+msgstr "O'zbek"
+
+#: apps/bot/keyboards/inline.py:30
+msgid "Русский"
+msgstr "Rus tili"
+
+#: apps/bot/keyboards/inline.py:31 apps/users/models.py:17
+msgid "English"
+msgstr "Ingliz tili"
+
+#: apps/bot/keyboards/inline.py:41
+msgid "Muloqot tili"
+msgstr "Muloqot tili"
+
+#: apps/bot/keyboards/inline.py:42
+msgid "Telefon"
+msgstr "Telefon"
+
+#: apps/bot/keyboards/inline.py:43
+msgid "Asosiy menu"
+msgstr "Asosiy menyu"
+
+#: apps/bot/keyboards/inline.py:55
+msgid "❌ Faolsizlantirish"
+msgstr "❌ O'chirish"
+
+#: apps/bot/keyboards/inline.py:60
+msgid "✅ Faol qilish"
+msgstr "✅ Faollashtirish"
+
+#: apps/bot/keyboards/inline.py:65
+msgid "🔧 Filtrlarni o'zgartirish"
+msgstr "🔧 Filtrlarni o'zgartirish"
+
+#: apps/bot/keyboards/inline.py:70
+msgid "📊 Hisobot"
+msgstr "📊 Hisobot"
+
+#: apps/bot/keyboards/inline.py:75
+msgid "🗑 O'chirish"
+msgstr "🗑 O'chirish"
+
+#: apps/bot/keyboards/inline.py:89 apps/bot/keyboards/inline.py:98
+msgid "✅ Tanlashni tugatish"
+msgstr "✅ Tanlashni tugatish"
+
+#: apps/bot/keyboards/inline.py:152
+msgid "0-10 ming km"
+msgstr "0-10 ming km"
+
+#: apps/bot/keyboards/inline.py:153
+msgid "10-50 ming km"
+msgstr "10-50 ming km"
+
+#: apps/bot/keyboards/inline.py:154
+msgid "50-100 ming km"
+msgstr "50-100 ming km"
+
+#: apps/bot/keyboards/inline.py:155
+msgid "100 ming km+"
+msgstr "100 ming km+"
+
+#: apps/bot/keyboards/inline.py:159
+msgid "✅ Tamom"
+msgstr "✅ Tamom"
+
+#: apps/bot/keyboards/inline.py:172
+msgid "🔎 Filtrlarni o'zgartirish"
+msgstr "🔎 Filtrlarni o'zgartirish"
+
+#: apps/bot/keyboards/inline.py:176
+msgid "Deteksiyani ishga tushurish"
+msgstr "Deteksiyani ishga tushurish"
+
+#: apps/bot/keyboards/inline.py:180
+msgid "Ortga"
+msgstr "Ortga"
+
+#: apps/common/models.py:7
+msgid "Created at"
+msgstr "Yaratilgan sana"
+
+#: apps/common/models.py:8
+msgid "Updated at"
+msgstr "Yangilangan sana"
+
+#: apps/users/models.py:10
+msgid "Active"
+msgstr "Faol"
+
+#: apps/users/models.py:11
+msgid "Inactive"
+msgstr "Nofaol"
+
+#: apps/users/models.py:12
+msgid "Banned"
+msgstr "Bloklangan"
+
+#: apps/users/models.py:16
+msgid "Uzbek"
+msgstr "O'zbek"
+
+#: apps/users/models.py:18
+msgid "Russian"
+msgstr "Rus tili"
+
+#: apps/users/models.py:20
+msgid "Phone number"
+msgstr "Telefon raqami"
+
+#: apps/users/models.py:21
+msgid "Name"
+msgstr "Ism"
+
+#: apps/users/models.py:22
+msgid "Telegram ID"
+msgstr "Telegram ID"
+
+#: apps/users/models.py:23
+msgid "Status"
+msgstr "Holat"
+
+#: apps/users/models.py:24
+msgid "Date Joined"
+msgstr "Qo'shilgan sana"
+
+#: apps/users/models.py:25
+msgid "Language"
+msgstr "Til"
+
+#: apps/users/models.py:26
+msgid "Statistics"
+msgstr "Statistika"
+
+#: apps/users/models.py:32
+msgid "User"
+msgstr "Foydalanuvchi"
+
+#: apps/users/models.py:33
+msgid "Users"
+msgstr "Foydalanuvchilar"

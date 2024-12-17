@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Export</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Users Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Language</th>
+                <th>Detektsiyalar soni</th>
+                <th>Last active at</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in object %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.phone_number }}</td>
+                <td>{{ user.language }}</td>
+                <td>{{ user.detections_count_display }}</td>
+                <td>{{ user.last_active_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
