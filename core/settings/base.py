@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -10,6 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, ".env"))
 from .jazzmin import *
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -32,8 +32,8 @@ DJANGO_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
-ASGI_APPLICATION = "core.asgi.application"
 
+ASGI_APPLICATION = "core.asgi.application"
 
 CUSTOM_APPS = [
     "apps.common",
@@ -41,23 +41,19 @@ CUSTOM_APPS = [
     "apps.users",
 ]
 
-
 THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
     "corsheaders",
     "modeltranslation",
     # 'debug_toolbar'
-
 ]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.SessionAuthentication",
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.TokenAuthentication', 
-
-
+        'rest_framework.authentication.TokenAuthentication',
     ),
     "DEFAULT_FILTER_BACKENDS": (
         "django_filters.rest_framework.DjangoFilterBackend",
@@ -68,25 +64,33 @@ REST_FRAMEWORK = {
 }
 AUTH_USER_MODEL = "users.User"
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
+
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",  # CORS Middleware should be first
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",  # CSRF Middleware
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-CORS_ALLOW_ALL_ORIGINS = True  # Agar barcha domenlarga ruxsat bermoqchi bo'lsangiz
-CSRF_TRUSTED_ORIGINS = [
+
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins for development
+CORS_ALLOW_CREDENTIALS = True  # If you need to send cookies with requests
+CORS_ALLOWED_ORIGINS = [
     "https://abduval.uz",
     "https://www.abduval.uz",
     "http://localhost:8000",
 ]
 
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://abduval.uz",
+    "https://www.abduval.uz",
+    "http://localhost:8000",
+]
 
 ROOT_URLCONF = "core.urls"
 
@@ -109,9 +113,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "core.wsgi.application"
 BASE_URL = os.getenv('BASE_URL', 'http://localhost:8000')
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+# Database settings
 DATABASES = {
     "default": {
         "ENGINE": env.str("DB_ENGINE"),
@@ -125,34 +127,20 @@ DATABASES = {
 }
 
 # Password validation
-# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/4.1/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "Asia/Tashkent"
-
 USE_I18N = True
-
 USE_TZ = True
 
+# Logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -184,6 +172,7 @@ LOGGING = {
     },
 }
 
+# JWT settings
 from datetime import timedelta
 
 SIMPLE_JWT = {
@@ -192,7 +181,6 @@ SIMPLE_JWT = {
     "ROTATE_REFRESH_TOKENS": False,
     "BLACKLIST_AFTER_ROTATION": False,
     "UPDATE_LAST_LOGIN": False,
-
     "ALGORITHM": "HS256",
     "SIGNING_KEY": SECRET_KEY,
     "VERIFYING_KEY": "",
@@ -201,23 +189,18 @@ SIMPLE_JWT = {
     "JSON_ENCODER": None,
     "JWK_URL": None,
     "LEEWAY": 0,
-
     "AUTH_HEADER_TYPES": ("Bearer",),
     "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
     "USER_ID_FIELD": "id",
     "USER_ID_CLAIM": "user_id",
     "USER_AUTHENTICATION_RULE": "rest_framework_simplejwt.authentication.default_user_authentication_rule",
-
     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
     "TOKEN_TYPE_CLAIM": "token_type",
     "TOKEN_USER_CLASS": "rest_framework_simplejwt.models.TokenUser",
-
     "JTI_CLAIM": "jti",
-
     "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
     "SLIDING_TOKEN_LIFETIME": timedelta(minutes=5),
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
-
     "TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainPairSerializer",
     "TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSerializer",
     "TOKEN_VERIFY_SERIALIZER": "rest_framework_simplejwt.serializers.TokenVerifySerializer",
@@ -227,10 +210,10 @@ SIMPLE_JWT = {
 }
 
 LOGIN_URL = '/admin'
-
 LOGOUT_REDIRECT_URL = "/"
 ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
+# Swagger settings for API documentation
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
         'Bearer': {
@@ -240,26 +223,26 @@ SWAGGER_SETTINGS = {
         }
     }
 }
+
+# Static and media files
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static"
-
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# CACHES
+# Caches (using Redis)
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
         "LOCATION": f"{env.str('REDIS_URL', 'redis://localhost:6379/0')}",
-        "KEY_PREFIX": "boilerplate",  # todo: you must change this with your project name or something else
+        "KEY_PREFIX": "boilerplate",  # Change to your project name or something unique
     }
 }
-# email configurations
+
+# Email configurations
 EMAIL_HOST = env.str("EMAIL_HOST", "localhost")
 EMAIL_PORT = env.int("EMAIL_PORT", 25)
 EMAIL_HOST_USER = env.str("EMAIL_HOST_USER", "")
@@ -267,24 +250,21 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD", "")
 EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", False)
 EMAIL_USE_SSL = env.bool("EMAIL_USE_SSL", False)
 
-# redis
+# Redis settings
 REDIS_HOST = env.str("REDIS_HOST", "localhost")
 REDIS_PORT = env.int("REDIS_PORT", 6379)
 REDIS_DB = env.int("REDIS_DB", 0)
 
-# CELERY CONFIGURATION
+# Celery configuration
 CELERY_BROKER_URL = env.str("CELERY_BROKER_URL", "redis://localhost:6379")
 CELERY_RESULT_BACKEND = env.str("CELERY_BROKER_URL", "redis://localhost:6379")
-
 CELERY_TIMEZONE = "Asia/Tashkent"
-
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
-# CYPHER CONFIGURATION
-# AES
+# AES encryption
 AES_KEY = env.str("AES_KEY", "")
 
-# core/constants.py
+# Cache timeout
 CACHE_TIMEOUT = 60 * 15  # 15 minutes
 AES_BLOCK_SIZE = 16
